@@ -1,1 +1,1 @@
-# Ghana-Korea-Information-Access-Center-IAC-
+# Ghana-Korea-Information-Access-Center (IAC)
