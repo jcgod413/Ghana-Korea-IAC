@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<script>
+	$(document).ready(function(){
+		$('#BookingSystem').click(function(){
+			$('#container').load('bookingsystem.html');	
+			 return false;
+		});
+		
+		$('#aboutUs').click(function(){
+			$('#container').load('aboutus.html');	
+			 return false;
+		});
+	});
+</script>
+<link type="text/css" rel="stylesheet" href="mainCSS.css"/>
+<title>GHANA-KOREA INFORMATION ACCESS CENTER</title>
+</head>
+
+
+<body>
+	<div class="top-bar"></div>
+	
+	<div class="title-bar">
+		<div class="page-header text-center">
+			<h3>ghana-korea information access center</h3>
+			<p>university of ghana</p>
+		</div>
+	</div>
+	
+	<div class="menu">		
+		<nav class="navbar navbar-default">
+		      <ul class="nav navbar-nav">
+		     	<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+		        <li><a href="#aboutUs" id="aboutUs">About us</a></li>
+		        
+		        <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#Facilities">Facilities
+			        <span class="caret"></span></a>
+			         <ul class="dropdown-menu">
+			          <li><a href="#">IT Training Lab</a></li>
+			          <li><a href="#">Conference Room</a></li>
+			          <li><a href="#">Seminar Rooms</a></li> 
+			          <li><a href="#">Internet Lounge</a></li>
+			          <li><a href="#">Reception</a></li> 
+			        </ul>
+			      </li>
+		        
+		        <li><a href="#Events">Events</a></li>
+		        <li><a href="http://libcal.ug.edu.gh/rooms.php?i=11908" target="_blank">Reservation</a></li>
+		        
+		        <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#Partners">Partners
+			        <span class="caret"></span></a>
+			         <ul class="dropdown-menu">
+			          <li><a href="http://www.nia.or.kr" target="_blank">NIA</a></li>
+			          <li><a href="http://kiv.nia.or.kr" target="_blank">KIV</a></li>
+			          <li><a href="#">IAC Net</a></li> 
+			        </ul>
+			      </li>
+		        
+		        
+		        <li><a href="#BookingSystem" id="BookingSystem">Booking System</a></li>
+
+		        <li><a href="#News">News</a></li>
+		      </ul>
+		</nav>				
+	</div>
+	
+	<div id="container">
+	
+		
+	</div>
+	
+	
+	<div class="footer">
+		<footer class="contatiner-fluid text-center">
+			<a href="#main" title="To Top">
+				<span class="glyphicon glyphicon-chevron-up"></span>
+			</a>
+			<p>IAC : GHANA-KOREA INFORMATION ACCESS CENTER</p>
+		</footer>
+	</div>
+</body>
+</html>
