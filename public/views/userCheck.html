@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GHANA-KOREA INFORMATION ACCESS CENTER</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="../css/mainCSS.css"/>
+<style>
+.alert{
+	padding: 0;
+	border: 0;
+	margin: 0;
+	color: red;
+}
+</style>
+
+</script>
+</head>
+<body>
+<!-- header start-->
+
+	<div class="top-bar"></div>
+	
+	<div class="title-bar">
+		<img src="../images/iac_banner4.png" alt="Image" id="banner">	
+	</div>
+	
+	<div class="menu">		
+		<nav class="navbar navbar-default">
+		      <ul class="nav navbar-nav">
+		     	<li><a href="main.html"><span class="glyphicon glyphicon-home"></span></a></li>
+		     	<li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#">About us
+			        <span class="caret"></span></a>
+			         <ul class="dropdown-menu">
+			          <li><a href="aboutus.html">About us</a></li> 
+			          <li><a href="staff.html">Staff</a></li> 
+			        </ul>
+			      </li>
+		        
+		        <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Facilities
+			        <span class="caret"></span></a>
+			         <ul class="dropdown-menu">
+			          <li><a href="itTrainingLab.html">IT Training Lab</a></li>
+			          <li><a href="conferenceRoom.html">Conference Room</a></li>
+			          <li><a href="seminarRooms.html">Seminar Rooms</a></li> 
+			          <li><a href="internetLounge.html">Internet Lounge</a></li>
+			          <li><a href="reception.html">Reception</a></li> 
+			        </ul>
+			      </li>
+		        
+		        <li><a href="events.html">Events</a></li>
+		        <li><a href="reservation.html">Reservation</a></li>
+		        
+		        <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Partners
+			        <span class="caret"></span></a>
+			         <ul class="dropdown-menu">
+			          <li><a href="http://eng.nia.or.kr/" target="_blank">NIA</a></li>
+			          <li><a href="https://kiv.nia.or.kr/en/info/infoList.do" target="_blank">KIV</a></li>
+			          <li><a href="#">IAC Net</a></li> 
+			        </ul>
+			      </li>
+		        
+		        
+		        <li><a href="http://iac.cafe24app.com/booking">Booking System</a></li>
+
+		        <li><a href="http://iac.cafe24app.com/news/list?page=1">News</a></li>
+		      </ul>
+		</nav>				
+	</div>
+<!-- header end -->	
+
+<!--******************************** container start ********************************-->
+		<div class="container-fluid">
+			<!-- button : bookingList -->
+			<a href="http://iac.cafe24app.com/booking">
+				<button type="button" class="btn btn-default" id="btn_back_register">back</button>
+			</a>
+			
+			<h2>Booking System</h2>
+			<p>write down</p>
+	<!-- form post -->		
+			<form class="form-horizontal" role="form" name="registerform" action="http://iac.cafe24app.com/booking/usercheck" method="post">
+				<!--id number  -->	
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="idNo">ID No:</label>
+			      <div class="col-sm-3">          
+			        <input type="text" class="form-control" id="idNo" name="idNo" placeholder="Enter ID Number"> 
+			        <div class="alert" id="id_alert"></div>
+			      </div>
+			    </div>
+			    <!--btn: submit  -->	
+				<div class="form-group">        
+			      <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-default">Valid Check</button>
+			      </div>
+			    </div>
+			</form>
+		</div>
+<!--******************************** container end ********************************-->	
+
+<!-- footer start -->
+	<div class="footer">
+		<footer class="contatiner text-center">
+			<div class="row">
+				<div class="col-sm-12" id="ToTopIcon"> 
+					<a href="#" title="To Top">
+					<span class="glyphicon glyphicon-chevron-up"></span>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-7">
+					<p>IAC : GHANA-KOREA INFORMATION ACCESS CENTER</p>
+				</div>
+				<div class="col-sm-5 text-left">
+					<p>
+						<span class="glyphicon glyphicon-home"></span>&nbsp;
+						<small>P.O. Box LG 24, Legon, Ghana
+							Location: Balme Library
+						</small>
+					</p>
+					<p>
+						<span class="glyphicon glyphicon-phone-alt"></span>&nbsp;
+						<small>+233 -302 213820 Ext: 7278</small>
+					</p>
+					<p>
+						<span class="glyphicon glyphicon-envelope"></span>&nbsp;
+						<small>iac.ugcs@ug.edu.gh</small>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+<!-- footer end -->	
+
+</body>
+</html>

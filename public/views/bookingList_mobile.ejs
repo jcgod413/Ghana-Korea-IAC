@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GHANA-KOREA INFORMATION ACCESS CENTER</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="../css/mainCSS.css"/>
+</head>
+
+<script>
+</script>
+</head>
+<body>
+	
+	<!--****************************** container start ********************************-->	
+	<div class="container">
+		<a href="views/signin.html">
+			<button type="button" class="btn btn-primary" id="signIn">sign in</button> 
+			<!-- previous member -->
+		</a>
+		
+		<a href="views/register.html">
+			<button type="button" class="btn btn-default" id="register" style="margin-right: 4px;">register</button> 
+			<!-- new member -->
+		</a>
+
+		
+		<h2>booking List</h2>
+		<p>check time-out button</p>
+		
+		<div class="table-responsive">
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Full name</th>
+					<th>ID</th>
+					<th>Time In</th>
+					<th>Time Out</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%for(var i=0; i<rows.length; i++)	{
+					var oneItem = rows[i];	%>
+
+					<tr>
+						<td class="index"><%=oneItem.index%></td>
+				        <td class="name"> <%=oneItem.name %></td>
+				        <td class="id">  <%=oneItem.id  %></td>
+				        <td class="time"> <%=oneItem.time %></td>
+
+						<!-- time out button  -->
+						<td>
+							<a href="booking/signout?id=<%=oneItem.id%>">
+								<button type="button" class="btn btn-default" id="timeOut">Time Out</button>	
+							</a>
+						</td>
+				    </tr>
+			    <%}%>
+			</tbody>
+		</table>
+			
+		</div>
+	</div>
+	<!--******************************** container end ********************************-->	
+
+</body>
+</html>

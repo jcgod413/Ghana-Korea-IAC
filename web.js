@@ -5,38 +5,78 @@
 var express = require('express');
 var http = require('http');
 var fs = require('fs');
-var menu = require('./routes/menu');
+var booking = require('./routes/booking');
+var news = require('./routes/news');
+var path = require('path');
+var ejs = require('ejs');
 
 // 웹 서버를 생성합니다.
 var app = express();
 
-// 미들웨어를 설정합니다.
-app.configure(function() {
-    app.set('views', __dirname + '/views');
-
+app.configure(function()    {
+    // 미들웨어를 설정합니다.
+    // app.set('views', __dirname + '/views');
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'ejs');
     app.use(app.router);
+    app.use(express.bodyParser());
     app.use(express.logger());
     app.use(express.cookieParser());
-
-    app.use(express.static('public'));
-});
-app.configure('development', function() {
+    app.use(express.static(__dirname + '/public')); 
     app.use(express.errorHandler());
-    
-    // source 가 예쁘게 출력되게 하는 옵션
-    app.locals.pretty = true;
+
+    app.engine('ejs', require('ejs-locals'));
 });
 
-
-http.createServer(app).listen(8002, function (request, response)	{ 
-	console.log('Server running at http://127.0.0.1:8002');
+http.createServer(app).listen(8003, function (request, response)	{ 
+	console.log('Server running');
 }); 
 
-app.get('/', menu.index);
-app.get('/about', menu.about);
-app.get('/facilities/:name', menu.facilities);
-app.get('/events', menu.events);
-app.get('/reservation', menu.reservation);
-app.get('/partners/:name', menu.partners);
-app.get('/booking', menu.booking);
-app.get('/news', menu.news);
+app.get('/', function(request, response)    {
+    // fs.readFile(__dirname + '/public/views/main.html', function (err, html) {
+    //     response.writeHeader(200, {"Content-Type": "text/html"});  
+    //     response.write(html);  
+    //     response.end(); 
+    // });
+    response.redirect('views/main.html');
+});
+
+// app.get('/upload', function(request, response)  {
+//     var path = __dirname + '/public/views/upload.html';
+//     fs.readFile(path, 'utf8', function (error, data) {
+//         response.writeHead(200, { 'Content-Type': 'text/html' });
+//         response.end(data);
+//     });
+// });
+
+// app.post('/upload', function(request, response)  {
+//     // 읽어드릴 파일 경로 지정
+//     var readPath = request.files.thumbnail.path;
+//     // 저장할 파일 경로를 지정
+//     var writePath = __dirname + "/public/images" + request.files.thumbnail.name;
+
+//     fs.readFile(readFile, function(error, data)    {    
+//         fs.writeFile(writePath, data, function(error)    {
+//             if( error ) {
+//                 throw error;
+//             }
+//             else    {
+//                 response.send('File uploaded to: ' + writePath);
+//             }
+//         });
+//     });
+// });
+
+app.get('/booking', booking.list);
+app.get('/booking_mobile', booking.list_mobile);
+app.post('/booking/signup', booking.signup);
+app.post('/booking/signin', booking.signin);
+app.get('/booking/signout', booking.signout);
+app.get('/booking/logincheck', booking.logincheck);
+app.post('/booking/usercheck', booking.usercheck);
+
+app.get('/news/list', news.list);
+app.get('/news', news.show);
+app.put('/news', news.edit);
+app.del('/news', news.remove);
+app.post('/news', news.add);
