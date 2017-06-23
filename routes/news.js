@@ -23,9 +23,7 @@ exports.list = function(request, response)	{
 		console.log(results);
 
 		var news = new Array();
-		var news2 = new Array();
 		var newsIndex = 0;
-		var newsIndex2 = 0;
 
 		var st = 6 * (page-1);
 		var end = 6 * page;
@@ -40,12 +38,7 @@ exports.list = function(request, response)	{
 			obj.contents = results[i].contents;
 			obj.image = results[i].image;
 			
-			if( newsIndex < 3 )	{
-				news[newsIndex++] = obj;
-			}
-			else	{
-				news2[newsIndex2++] = obj;
-			}
+			news[newsIndex++] = obj;
 		}
 
 		var maxPage = results.length / 6;
@@ -56,7 +49,7 @@ exports.list = function(request, response)	{
 		var path = homeDir + '/public/views/news.ejs';
 		fs.readFile(path, 'utf8', function (error, data) {
 	        response.writeHead(200, { 'Content-Type': 'text/html' });
-	        response.end(ejs.render(data, {row:news, row2:news2, 'maxPage':maxPage}));
+	        response.end(ejs.render(data, {row:news, 'maxPage':maxPage}));
 	    });
 	});
 };

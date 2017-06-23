@@ -13,6 +13,9 @@
 <script src="../../../js/esimakin-twbs-pagination-1.3.1-2-g4a2f5ff/esimakin-twbs-pagination-4a2f5ff/jquery.twbsPagination.js"></script>
 <script src="../../../js/esimakin-twbs-pagination-1.3.1-2-g4a2f5ff/esimakin-twbs-pagination-4a2f5ff/jquery.twbsPagination.min.js"></script>
 <style>
+.img-responsive{
+	width: 100%;
+}
 #news_Title{
  	margin-bottom: 40px;
 }
@@ -105,14 +108,14 @@ li .active{
 		<ul class="nav nav-tabs" id="news_Title">
 			<li class="active"><a href="#">news</a></li>
 		</ul>
-		<div class="container-fluid">	
+		<div class="container-fluid" id="contain_news">
 
 			<div class="row">
 			  <%for(var i=0; i<row.length; i++)	{
 					var oneItem = row[i];	%>
 					  <div class="col-sm-6 col-md-4">
 					    <div class="thumbnail">
-					      <img src="../../images/<%=oneItem.image%>" alt="Image" >
+					      <img src="../../images/<%=oneItem.image%>" alt="Image" id="news_Contents_img" class="img-responsive">
 					      <div class="caption">
 					      	<div id="news_Contents_title">
 					       		 <h4><%=oneItem.title%></h4>			      	
@@ -127,31 +130,6 @@ li .active{
 					  </div>
 		  		<%}%>
 			</div>
-			
-			<% if( row2.length > 0 )	{  %>
-				<div class="row">
-
-					<% for(var i=0; i<row2.length; i++)	{
-						var oneItem = row2[i];	%>
-						<div class="col-sm-6 col-md-4">
-					    <div class="thumbnail">
-					      <img src="../../images/<%=oneItem.image%>" alt="Image">
-					      <div class="caption">
-					      	<div id="news_Contents_title">
-					       		 <h4><%=oneItem.title%></h4>			      	
-					      	</div>
-					        <p id="news_Contents_text"><%=oneItem.contents%></p>
-							<a href="http://iac.cafe24app.com/news?id=<%=oneItem.id%>">
-								<button type="button" class="btn btn-default" id="detail_news">Detail</button>
-							</a>
-					        
-					      </div>
-					    </div>
-					  </div>
-		  		<%}%>
-					
-		  		</div>
-			<%}%>
 		</div>	
 	</div>
 		
